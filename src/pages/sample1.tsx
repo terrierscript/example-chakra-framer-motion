@@ -12,14 +12,23 @@ const Page = () => {
     <Box>
 
       <ChakraBox
+        p={2}
         bg="red.100"
-        w={10}
-        h={10}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+
+        w={100}
+        h={100}
         // animate={{ x: [0, 100, 0] }}
-        animate={{ rotate: 360 }}
+        animate={{
+          rotate: 360,
+
+        }}
 
         transition={{
-          // duration: "2",
+          repeat: Infinity
+          // durat ion: "2",
           // ease: "ease"
         }}
       >
