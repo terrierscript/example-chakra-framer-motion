@@ -39,21 +39,17 @@ const RotateBox = (props: BoxProps) => {
   />
 }
 const Page = () => {
+  const delays = [0, 0.2, 0.4, 0.6]
   return <Box p={10}>
-    <HStack>
-      <Box w={100} h={100}>
-        <Rotate><RotateBox w={100} h={100} /></Rotate>
-      </Box>
-      <Box w={100} h={100}>
-        <Rotate transition={{ delay: 0.5 }}>
-          <RotateBox w={100} h={100} />
-        </Rotate>
-      </Box>
-      <Box w={100} h={100}>
-        <Rotate transition={{ delay: 1 }}>
-          <RotateBox w={100} h={100} />
-        </Rotate>
-      </Box>
+    <HStack spacing={10}>
+      {delays.map((delay, i) => {
+
+        return <Box w={100} h={100} key={i}>
+          <Rotate transition={{ delay }}>
+            <RotateBox w={100} h={100} />
+          </Rotate>
+        </Box>
+      })}
     </HStack>
   </Box>
 }
